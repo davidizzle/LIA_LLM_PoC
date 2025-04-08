@@ -37,10 +37,11 @@ gif_html.markdown(
 
 @st.cache_resource
 def load_model():
-    # Access to Gemma is gated, so the Space will not inherit it. Select tiny gpt2 to stub
+    # As Gemma is gated, we will show functionality of the demo using DeepSeek-R1-Distill-Qwen-1.5B model 
     # model_id = "google/gemma-2b-it"
-    model_id = "sshleifer/tiny-gpt2"  # OR distilgpt2
-    tokenizer = AutoTokenizer.from_pretrained(model_id, token=True)
+    # tokenizer = AutoTokenizer.from_pretrained(model_id, token=True)
+    model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+    tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
         device_map=None,
