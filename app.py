@@ -18,8 +18,8 @@ def load_gif_base64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode("utf-8")
 
-still_gem_b64 = load_gif_base64("assets/stillGem.gif")
-rotating_gem_b64 = load_gif_base64("assets/rotatingGem.gif")
+# still_gem_b64 = load_gif_base64("assets/stillGem.gif")
+# rotating_gem_b64 = load_gif_base64("assets/rotatingGem.gif")
 
 # Placeholder for GIF HTML
 gif_html = st.empty()
