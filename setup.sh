@@ -1,6 +1,10 @@
 #!/bin/bash
+echo "Running setup.sh..."
 
-# Initialize LFS and pull all LFS-tracked files
-apt-get update && apt-get install -y git-lfs
-git lfs install
-git lfs pull
+# Check if git-lfs is installed
+if command -v git-lfs &> /dev/null; then
+    echo "git-lfs is available, running pull..."
+    git lfs pull
+else
+    echo "git-lfs not installed in this environment. Skipping pull."
+fi
