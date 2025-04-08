@@ -26,8 +26,12 @@ gif_html = st.empty()
 caption = st.empty()
 
 # Initially show still gem
+# gif_html.markdown(
+#     f"<div style='text-align:center;'><img src='data:image/gif;base64,{still_gem_b64}' width='300'></div>",
+#     unsafe_allow_html=True,
+# )
 gif_html.markdown(
-    f"<div style='text-align:center;'><img src='data:image/gif;base64,{still_gem_b64}' width='300'></div>",
+    f"<div style='text-align:center;'><img src='https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG00dmlwbjZsemZ5Mnh2eTIwOGNyYncwbGNqd3U3aHhiNGYxYjgwbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/WmJtDY3xgYVgXgQZYc/giphy.gif' width='300'></div>",
     unsafe_allow_html=True,
 )
 
@@ -73,8 +77,12 @@ with col3:
 
 if st.button("Generate"):
     # Swap to rotating GIF
+    # gif_html.markdown(
+    #     f"<div style='text-align:center;'><img src='data:image/gif;base64,{rotating_gem_b64}' width='300'></div>",
+    #     unsafe_allow_html=True,
+    # )
     gif_html.markdown(
-        f"<div style='text-align:center;'><img src='data:image/gif;base64,{rotating_gem_b64}' width='300'></div>",
+        f"<div style='text-align:center;'><img src='https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXB0ZTEycW1yYWhvZWExdHFyNzBnemdtdm80NzY0MGg1ZnkyNTRqbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/FIMRlbkylLyniVP7WG/giphy.gif' width='300'></div>",
         unsafe_allow_html=True,
     )
     caption.markdown("<p style='text-align: center;'>Gemma is thinking... 🌀</p>", unsafe_allow_html=True)
@@ -87,8 +95,12 @@ if st.button("Generate"):
         outputs = model.generate(**inputs, max_new_tokens=max_tokens, temperature=temperature, top_p=top_p)
 
     # Back to still
+    # gif_html.markdown(
+    #     f"<div style='text-align:center;'><img src='data:image/gif;base64,{still_gem_b64}' width='300'></div>",
+    #     unsafe_allow_html=True,
+    # )
     gif_html.markdown(
-        f"<div style='text-align:center;'><img src='data:image/gif;base64,{still_gem_b64}' width='300'></div>",
+        f"<div style='text-align:center;'><img src='https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG00dmlwbjZsemZ5Mnh2eTIwOGNyYncwbGNqd3U3aHhiNGYxYjgwbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/WmJtDY3xgYVgXgQZYc/giphy.gif' width='300'></div>",
         unsafe_allow_html=True,
     )
     caption.empty()
