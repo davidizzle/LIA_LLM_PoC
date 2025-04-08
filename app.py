@@ -37,7 +37,9 @@ gif_html.markdown(
 
 @st.cache_resource
 def load_model():
-    model_id = "google/gemma-2b-it"
+    # Access to Gemma is gated, so the Space will not inherit it. Select tiny gpt2 to stub
+    # model_id = "google/gemma-2b-it"
+    model_id = "sshleifer/tiny-gpt2"  # OR distilgpt2
     tokenizer = AutoTokenizer.from_pretrained(model_id, token=True)
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
