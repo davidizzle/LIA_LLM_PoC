@@ -1,6 +1,6 @@
 ---
-title: Gemma Demo GSoC
-emoji: 💎
+title: LIA - LLM Demo
+emoji: ♌
 colorFrom: indigo
 colorTo: pink
 sdk: streamlit
@@ -9,13 +9,13 @@ app_file: app.py
 pinned: false
 ---
 
-# 💎 Gemma 💎 HF Spaces Demo
+# ♌ LIA ♌ HF Spaces Demo
 
-An interactive [Streamlit](https://streamlit.io) app to test [Gemma](https://huggingface.co/google/gemma-2b) models directly in your browser.
+An interactive [Streamlit](https://streamlit.io) app to test [DeepSeek](https://huggingface.co/google/gemma-2b) models directly in your browser.
 
 ## Features 🚀
 
-- Chat with the Gemma model (default: `google/gemma-2b`)
+- Chat with the LLM Model
 - Fast deploy to Hugging Face Spaces
 - Easy to customize & extend
 
