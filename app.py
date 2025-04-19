@@ -44,7 +44,7 @@ def load_model():
     # model_id = "deepseek-ai/deepseek-llm-7b-chat"
     # model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
     
-    model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+    model_id = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
@@ -60,7 +60,7 @@ def load_model():
     return tokenizer, model
 
 tokenizer, model = load_model()
-prompt = st.text_area("Enter your prompt:", "What is Leonardo, the company with the red logo?")
+prompt = st.text_area("Enter your prompt:", "What company is Leonardo S.p.A.?")
 # Example prompt selector
 # examples = {
 #     "🧠 Summary": "Summarize the history of AI in 5 bullet points.",
