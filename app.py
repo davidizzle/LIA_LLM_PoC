@@ -40,14 +40,17 @@ def load_model():
     # As Gemma is gated, we will show functionality of the demo using DeepSeek-R1-Distill-Qwen-1.5B model 
     # model_id = "google/gemma-2b-it"
     # tokenizer = AutoTokenizer.from_pretrained(model_id, token=True)
-    model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+    # model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+    model_id = "deepseek-ai/deepseek-llm-7b-chat"
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
-        device_map=None,
-        torch_dtype=torch.float32
+        # device_map=None,
+        # torch_dtype=torch.float32
+        device_map="auto",
+        torch_dtype=torch.float16
     )
-    model.to("cpu")
+    # model.to("cpu")
     return tokenizer, model
 
 tokenizer, model = load_model()
@@ -95,7 +98,11 @@ if st.button("Generate"):
 
     inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
     with torch.no_grad():
-        outputs = model.generate(**inputs, max_new_tokens=100, temperature=1.0, top_p=0.95)
+        outputs = model.generate(   **inputs,
+                                    # max_new_tokens=100, 
+                                    max_new_tokens=200, 
+                                    temperature=1.0, 
+                                    top_p=0.95)
 
     # Back to still
     # gif_html.markdown(

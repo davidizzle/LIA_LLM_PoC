@@ -24,3 +24,4 @@ An interactive [Streamlit](https://streamlit.io) app to test [DeepSeek](https://
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+```
