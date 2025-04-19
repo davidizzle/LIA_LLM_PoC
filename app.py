@@ -41,7 +41,8 @@ def load_model():
     # model_id = "google/gemma-2b-it"
     # tokenizer = AutoTokenizer.from_pretrained(model_id, token=True)
     # model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
-    model_id = "deepseek-ai/deepseek-llm-7b-chat"
+    # model_id = "deepseek-ai/deepseek-llm-7b-chat"
+    model_id = "deepseek-ai/DeepSeek-V3"
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
