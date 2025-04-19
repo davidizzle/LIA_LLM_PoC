@@ -89,7 +89,7 @@ if st.button("Generate"):
     with torch.no_grad():
         outputs = model.generate(   **inputs,
                                     # max_new_tokens=100, 
-                                    max_new_tokens=256, 
+                                    max_new_tokens=512, 
                                     do_sample=True,
                                     temperature=0.6,
                                     top_p=0.95,
