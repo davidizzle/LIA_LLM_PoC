@@ -1,35 +1,21 @@
 import streamlit as st
 from transformers import AutoModelForCausalLM, AutoTokenizer, FineGrainedFP8Config
 import torch
+import time
 import base64
 
 st.set_page_config(page_title="LIA Demo", layout="wide")
-# Model selection (STUBBED behavior)
-# model_option = st.selectbox(
-#     "Choose a Gemma to reveal hidden truths:",
-#     ["gemma-2b-it (Instruct)", "gemma-2b", "gemma-7b", "gemma-7b-it"],
-#     index=0,
-#     help="Stubbed selection – only gemma-2b-it will load for now."
-# )
 st.markdown("<h1 style='text-align: center;'>Ask LeoNardo!</h1>", unsafe_allow_html=True)
 
 # Load both GIFs in base64 format
 def load_gif_base64(path):
     with open(path, "rb") as f:
         return base64.b64encode(f.read()).decode("utf-8")
-
-# still_gem_b64 = load_gif_base64("assets/stillGem.gif")
-# rotating_gem_b64 = load_gif_base64("assets/rotatingGem.gif")
-
+    
 # Placeholder for GIF HTML
 gif_html = st.empty()
 caption = st.empty()
 
-# Initially show still gem
-# gif_html.markdown(
-#     f"<div style='text-align:center;'><img src='data:image/gif;base64,{still_gem_b64}' width='300'></div>",
-#     unsafe_allow_html=True,
-# )
 gif_html.markdown(
     f"<div style='text-align:center;'><img src='https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTRxYzI2bXJmY3N2bXBtMHJtOGV3NW9vZ3l3M3czbGYybGpkeWQ1YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3uPWb5EYVvxdfoREQm/giphy.gif' width='300'></div>",
     unsafe_allow_html=True,
@@ -37,9 +23,6 @@ gif_html.markdown(
 
 @st.cache_resource
 def load_model():
-    # As Gemma is gated, we will show functionality of the demo using DeepSeek-R1-Distill-Qwen-1.5B model 
-    # model_id = "google/gemma-2b-it"
-    # tokenizer = AutoTokenizer.from_pretrained(model_id, token=True)
     # model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
     # model_id = "deepseek-ai/deepseek-llm-7b-chat"
     # model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
@@ -127,7 +110,16 @@ if st.button("Generate"):
     caption.empty()
 
 
-    result = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    st.markdown("### ✨ Output:")
-    result = result.split("</think>\n")[1:]
-    st.write(result)
+    decoded_output = tokenizer.decode(outputs[0], skip_special_tokens=True)
+     # Set up placeholder for streaming effect
+    output_placeholder = st.empty()
+    streamed_text = ""
+
+    for word in decoded_output.split(" "):
+        streamed_text += word + " "
+        output_placeholder.markdown("### ✨ Output:\n\n" + streamed_text + "▌")
+        # slight delay
+        time.sleep(0.03)
+
+    # Final cleanup (remove blinking cursor)
+    output_placeholder.markdown("### ✨ Output:\n\n" + streamed_text)
