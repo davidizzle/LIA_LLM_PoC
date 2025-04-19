@@ -43,7 +43,7 @@ def load_model():
     # model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
     # model_id = "deepseek-ai/deepseek-llm-7b-chat"
     # model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
-    model_id = "mistralai/Mistral-7B-Instruct-v0.3"
+    model_id = "TheBloke/Mistral-7B-Instruct-v0.1-GGUF"
     
 
     quantization_config = FineGrainedFP8Config()
