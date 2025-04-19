@@ -91,7 +91,7 @@ if st.button("Generate"):
                                     # max_new_tokens=100, 
                                     max_new_tokens=256, 
                                     do_sample=True,
-                                    temperature=1.0,
+                                    temperature=0.6,
                                     top_p=0.95,
                                     top_k=50, 
                                     num_return_sequences=1, 
