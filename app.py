@@ -42,7 +42,7 @@ def load_model():
     # tokenizer = AutoTokenizer.from_pretrained(model_id, token=True)
     # model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
     # model_id = "deepseek-ai/deepseek-llm-7b-chat"
-    model_id = "deepseek-ai/DeepSeek-V3-0324"
+    model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B"
 
     quantization_config = FineGrainedFP8Config()
     tokenizer = AutoTokenizer.from_pretrained(model_id)
@@ -52,8 +52,8 @@ def load_model():
         # torch_dtype=torch.float32
         device_map="auto",
         torch_dtype=torch.float16,
-        trust_remote_code = True,
-        quantization_config=quantization_config
+        # quantization_config=quantization_config,
+        trust_remote_code = True
     )
     # model.to("cpu")
     return tokenizer, model
