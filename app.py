@@ -55,8 +55,8 @@ def load_model():
         device_map="auto",
         torch_dtype=torch.float16,
         # quantization_config=quantization_config,
-        trust_remote_code = True,
-        attn_implementation="flash_attention_2"
+        # attn_implementation="flash_attention_2",
+        trust_remote_code = True
     )
     # model.to("cpu")
     return tokenizer, model
