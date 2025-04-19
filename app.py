@@ -44,7 +44,7 @@ def load_model():
     # model_id = "deepseek-ai/deepseek-llm-7b-chat"
     # model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
     
-    model_id = "deepseek-ai/DeepSeek-V2-Lite-Chat"
+    model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B"
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
@@ -53,7 +53,7 @@ def load_model():
         device_map="auto",
         torch_dtype=torch.float16,
         # quantization_config=quantization_config,
-        # attn_implementation="flash_attention_2", 
+        # attn_implementation="flash_attention_2",
         trust_remote_code = True
     )
     # model.to("cpu")

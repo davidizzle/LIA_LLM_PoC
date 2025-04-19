@@ -1,4 +1,4 @@
 streamlit
-git+https://github.com/huggingface/transformers.git
+transformers
 torch
 accelerate
