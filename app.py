@@ -128,5 +128,5 @@ if st.button("Generate"):
 
     result = tokenizer.decode(outputs[0], skip_special_tokens=True)
     st.markdown("### ✨ Output:")
-    final_thought = result.split("<think>\n")[1:]
+    final_thought = result.split("</think>\n")[1:]
     st.write(final_thought)
