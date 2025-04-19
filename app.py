@@ -107,7 +107,7 @@ if st.button("Generate"):
         outputs = model.generate(   **inputs,
                                     # max_new_tokens=100, 
                                     max_new_tokens=256, 
-                                    do_sample=False,
+                                    do_sample=True,
                                     temperature=1.0,
                                     top_p=0.95,
                                     top_k=50, 
