@@ -105,9 +105,14 @@ if st.button("Generate"):
     with torch.no_grad():
         outputs = model.generate(   **inputs,
                                     # max_new_tokens=100, 
-                                    max_new_tokens=200, 
-                                    temperature=1.0, 
-                                    top_p=0.95)
+                                    max_new_tokens=256, 
+                                    do_sample=False,
+                                    temperature=1.0,
+                                    top_p=0.95,
+                                    top_k=50, 
+                                    num_return_sequences=1, 
+                                    eos_token_id=tokenizer.eos_token_id
+                                    )
 
     # Back to still
     # gif_html.markdown(
@@ -123,4 +128,5 @@ if st.button("Generate"):
 
     result = tokenizer.decode(outputs[0], skip_special_tokens=True)
     st.markdown("### ✨ Output:")
-    st.write(result)
+    final_thought = result.split("<think>\n")[1:]
+    st.write(final_thought)
