@@ -44,7 +44,7 @@ def load_model():
     # model_id = "deepseek-ai/deepseek-llm-7b-chat"
     # model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
     
-    model_id = "Qwen/Qwen2.5-Omni-7B"
+    model_id = "openaccess-ai-collective/tiny-mistral"
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
