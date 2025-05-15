@@ -5,7 +5,7 @@ import time
 import base64
 
 st.set_page_config(page_title="LIA Demo", layout="wide")
-st.markdown("<h1 style='text-align: center;'>Ask LeoNardo!</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Ask Lisa all things Leonardo!</h1>", unsafe_allow_html=True)
 
 # Load both GIFs in base64 format
 def load_gif_base64(path):
