@@ -80,7 +80,7 @@ if st.button("Generate"):
         f"<div style='text-align:center;'><img src='https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXViMm02MnR6bGJ4c2h3ajYzdWNtNXNtYnNic3lnN2xyZzlzbm9seSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/k32ddF9WVs44OUaZAm/giphy.gif' width='300'></div>",
         unsafe_allow_html=True,
     )
-    caption.markdown("<p style='text-align: center; margin-top: 20px;'>LeoNardo is thinking... 🌀</p>", unsafe_allow_html=True)
+    caption.markdown("<p style='text-align: center; margin-top: 20px;'>Lisa is thinking... 🌀</p>", unsafe_allow_html=True)
 
 
     # Generate text
