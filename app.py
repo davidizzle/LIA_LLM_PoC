@@ -25,9 +25,9 @@ gif_html.markdown(
 def load_model():
     # model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
     # model_id = "deepseek-ai/deepseek-llm-7b-chat"
-    # model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+    model_id = "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
     
-    model_id = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
+    # model_id = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
